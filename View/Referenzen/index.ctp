@@ -1,3 +1,6 @@
+<?php
+	echo $this->Html->script("referenzen.js");
+?>
 <div class="container">
     <form method="post" action="/verwaltungneu/refernzen/add.php" enctype="multipart/form-data">
         <div class="input-group input-group-lg">
@@ -48,7 +51,7 @@
 			<span class="input-group-addon"><?php echo __("Anzahl Bild-felder hinzufuegen:"); ?></span>
 			<input class="form-control input-lg" id="referenzen_anzahl_bilder">
 		</div>
-		<div class="input-group input-group-lg">
+		<div class="input-group input-group-lg" id="pasteafter">
 			<span class="input-group-addon"><?php echo __("Thumbnail:"); ?></span>
 			<input type="file" name="thumbnail" class="bild" value="notnull"> <input type="hidden" name="thumbnail" value="notnull">
 		</div>
