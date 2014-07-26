@@ -2,7 +2,7 @@
 	echo $this->Html->script("referenzen.js");
 ?>
 <div class="container">
-    <form method="post" action="/verwaltungneu/refernzen/add.php" enctype="multipart/form-data">
+    <form method="post" action="<?php echo $this->webroot?>referenzen/add" enctype="multipart/form-data">
         <div class="input-group input-group-lg">
 			<span class="input-group-addon"><?php echo __("Landkreis:"); ?></span>
 			<input class="form-control input-lg" <?php if(isset($post)) echo 'value="' . $post['lk'] . '" ' ?> name="lk">
@@ -51,16 +51,19 @@
 			<span class="input-group-addon"><?php echo __("Anzahl Bild-felder hinzufuegen:"); ?></span>
 			<input class="form-control input-lg" id="referenzen_anzahl_bilder">
 		</div>
-		<div class="input-group input-group-lg" id="pasteafter">
+        <div id="pictures">
+        </div>
+		<div class="input-group input-group-lg">
 			<span class="input-group-addon"><?php echo __("Thumbnail:"); ?></span>
 			<input type="file" name="thumbnail" class="bild" value="notnull"> <input type="hidden" name="thumbnail" value="notnull">
 		</div>
 
-		<button class="btn btn-default submit" type="submit" id="referenzen_add_bilder">
-				<?php echo __("bild-felder hinzufuegen"); ?>
-		</button>
-		<button class="btn btn-default submit" type="submit" id="submit">
+				<button class="btn btn-default submit" type="submit" id="submit">
 				<?php echo __("Referenz hinzufuegen"); ?>
 		</button>
     </form>
+    <button class="btn btn-default submit" id="referenzen_add_bilder">
+	    <?php echo __("bild-felder hinzufuegen"); ?>
+	</button>
+
 </div>

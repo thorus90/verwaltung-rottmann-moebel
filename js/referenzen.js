@@ -6,9 +6,16 @@ $(document).ready(function(){
 		}
 		else{
 			for(var i = count;i >= 1; i--){
-				$('#pasteafter').after('<li>Bild' + i + ': <input class="bild" name="bild'
-									+ i + '" type="file"><input type="hidden" name="bild_' + i + '"></li>' +
-									'<li>Bild' + i + '-alt: <input name="alt' + i + '" type="text"></li>');
+				$('#pictures').after(
+                   '<div class="input-group input-group-lg">' +
+                    '<span class="input-group-addon">Bild' + i + ':</span>' +
+                    '<input type="file" name="bild' + i + '" class="bild" value="notnull">' +
+                    '<input type="hidden" name="bild_' + i + '" value="notnull">' +
+                    '</div>' +
+                    '<div class="input-group input-group-lg">' +
+                    '<span class="input-group-addon">Bild' + i + ':</span>' +
+                    '<input type="text" class="form-control input-lg" name="alt' + i + '">' + 
+                    '</div>');
 			}
 		}
 	});
