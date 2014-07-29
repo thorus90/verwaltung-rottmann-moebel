@@ -17,6 +17,13 @@ class ReferenzenController extends AppController
     
     public function add ()
     {
-        
+        if ($this->request->is('post')) {
+            // If the form data can be validated and saved...
+            if ($this->Referenzen->save($this->request->data)) {
+                // Set a session flash message and redirect.
+                $this->Session->setFlash('Referenz Saved!');
+                return $this->redirect('/referenzen');
+            }
+        }
     }
 }
