@@ -2,12 +2,13 @@
 
 class ReferenzenController extends AppController
 {
-/*
+
     public $components = array(
+        'DebugKit.Toolbar',
         'Session',
         'Auth' 
     );
-*/
+
 	public $helpers = array();
 
 	public function index ()

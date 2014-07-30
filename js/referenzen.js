@@ -1,12 +1,10 @@
 $(document).ready(function(){
-	$('#referenzen_add_bilder').click(function(){
-		var count = $('#referenzen_anzahl_bilder').val();
-		if(!count || !parseInt(count)){
-			alert("Bitte geben Sie eine Zahl bei Anzahl Bilder-felder an!");
-		}
-		else{
+	$('#referenzenTmp').keyup(function(event){ //wenn taste losgelassen wird
+		var count = $('#referenzenTmp').val();
+		if(count && parseInt(count)){
+			$('#pictures').empty();
 			for(var i = count;i >= 1; i--){
-				$('#pictures').after(
+				$('#pictures').prepend(
                    '<div class="input-group input-group-lg">' +
                     '<span class="input-group-addon">Bild' + i + ':</span>' +
                     '<input type="file" name="bild' + i + '" class="bild" value="notnull">' +
