@@ -3,7 +3,7 @@ $(document).ready(function(){
 		var count = $('#ReferenceTmp').val();
 		if(count && parseInt(count)){
 			$.post(
-				"/verwaltungneu/referencePictures/renderInputFields/",
+				"/verwaltung/referencePictures/renderInputFields/",
 				{
 					quantity: $('#ReferenceTmp').val()
 				},
