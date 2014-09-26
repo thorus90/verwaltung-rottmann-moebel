@@ -5,8 +5,16 @@ class ReferencePicturesController extends AppController
 	public $components = array(
 		'DebugKit.Toolbar',
         'Session',
-        'Auth' 
+        'Auth'
     );
+
+    /*
+    public $helpers = array(
+        'Form' => array(
+              'className' => 'BootstrapForm'
+        )
+    );
+    */
 
     public function renderInputFields (){
     	if( $this->request->is('ajax') )

@@ -10,7 +10,8 @@ class ReferencePicture extends AppModel
                     'normal' => '1024x576'
                 ),
                 'thumbnails' => true,
-                'thumbnailMethod' => 'php'
+                'thumbnailMethod' => 'php',
+                'maxSize' => 10485760
             )
         )
     );

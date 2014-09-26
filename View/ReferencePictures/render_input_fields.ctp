@@ -9,6 +9,18 @@ for ( $x = 0; $x < $quantity; $x++) {
 	    echo '<span class="input-group-addon">Alt Text Bild '. $x . ':</span>';
 	    echo $this->Form->input('ReferencePicture.'. $x . '.alt', array('type' => 'text', 'label' => ''));
 	echo '</div>';
+	/*
+	echo $this->Form->input('ReferencePicture.' . $x . '.name', array(
+		'label' => __('Bild ' . $x . ':'),
+		'type' => 'file'
+		)
+	);
+	echo $this->Form->input('ReferencePicture.' . $x . '.alt', array(
+		'label' => __('Alt Text Bild ' . $x . ':'),
+		'type' => 'text'
+		)
+	);
+	*/
 }
 
 ?>

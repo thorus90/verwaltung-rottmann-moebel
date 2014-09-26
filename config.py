@@ -7,6 +7,7 @@ symlinks = [
 	(sdir + '/Model/ReferencePicture.php', cakedir + '/Model/ReferencePicture.php'),
 	(sdir + '/View/ReferencePictures/render_input_fields.ctp', cakedir + '/View/ReferencePictures/render_input_fields.ctp'),
 	(sdir + '/View/References/add.ctp', cakedir + '/View/References/add.ctp'),
+	(sdir + '/View/References/delete.ctp', cakedir + '/View/References/delete.ctp'),
 	(sdir + '/View/References/index.ctp', cakedir + '/View/References/index.ctp'),
 	(sdir + '/js/reference.js', cakedir + '/webroot/js/reference.js'),
 ]

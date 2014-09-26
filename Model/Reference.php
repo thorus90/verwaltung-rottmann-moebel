@@ -10,7 +10,8 @@ class Reference extends AppModel {
                     'thumbnail' => '150x100'
                 ),
                 'thumbnails' => true,
-                'thumbnailMethod' => 'php'
+                'thumbnailMethod' => 'php',
+                'maxSize' => 10485760
             )
         )
     );
@@ -45,6 +46,12 @@ class Reference extends AppModel {
                 'rule' => array('notEmpty'),
                 'required' => true,
                 'message' => 'Name wird benötigt'
+            ),
+            'unique' => array
+            (
+                'rule' => array('isUnique'),
+                'required' => 'create',
+                'message' => 'Name muss eindeutig sein'
             )
         ),
         'owner' => array(
@@ -109,14 +116,6 @@ class Reference extends AppModel {
                 'rule' => array('notEmpty'),
                 'required' => true,
                 'message' => 'Essen wird benötigt'
-            )
-        ),
-        'thumbnail.name' => array(
-            'fileName' => array
-            (
-                'rule' => 'alphaNumericDashUnderscore',
-                'required' => true,
-                'message' => 'Nur Buchstaben,Zahlen und _ - erlaubt!'
             )
         )
     );

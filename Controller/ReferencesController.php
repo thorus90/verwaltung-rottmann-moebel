@@ -6,15 +6,32 @@ class ReferencesController extends AppController
     public $components = array(
         'DebugKit.Toolbar',
         'Session',
-        'Auth' 
+        'Auth'
     );
 
-	public $helpers = array();
+	public $helpers = array(
+        'Form' => array(
+            'className' => 'BootstrapForm'
+        ),
+        'Html'
+    );
 
 	public function index ()
 	{
-		$this->set('referenzen', $this->References->find('all'));
+		$this->set('references', $this->Reference->find('all'));
 	}
+
+    public function delete ()
+    {
+        if($this->Reference->delete($this->request->data['Reference']['id']))
+        {
+            $this->Session->setFlash(__('The Reference has been deleted'));
+        }
+        else
+        {
+            $this->Session->setFlash(__('Error occured'));
+        }
+    }
     
     public function add ()
     {
